@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DevOps Lab 1 — My Portfolio</title>
-    <meta name="description" content="Portfolio DevOps Lab 1: trải nghiệm CI/CD Pipeline với HTML, CSS, Git và GitHub Actions.">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -24,58 +23,49 @@
             box-shadow: 0 20px 60px rgba(0,0,0,0.3);
             text-align: center;
         }
-        h1 { color: #5145a3; margin-bottom: 8px; font-size: 32px; }
+        h1 { color: #667eea; margin-bottom: 8px; font-size: 32px; }
         h2 { color: #764ba2; margin-bottom: 24px; font-size: 18px; font-weight: normal; }
         .info { background: #f8f9fa; border-radius: 8px; padding: 20px; margin: 16px 0; text-align: left; }
         .info p { margin: 8px 0; }
         .badge {
             display: inline-block;
-            background: #5145a3;
+            background: #667eea;
             color: white;
             padding: 6px 14px;
             border-radius: 20px;
             font-size: 14px;
             margin: 4px;
-            text-decoration: none;
         }
-        .badge:hover, .badge:focus-visible {
-            background: #3d347b;
-        }
-        .badge:focus-visible {
-            outline: 3px solid #222;
-            outline-offset: 3px;
-        }
-        .footer { margin-top: 24px; font-size: 13px; color: #595959; }
+        .footer { margin-top: 24px; font-size: 13px; color: #999; }
         .status { color: #38a169; font-weight: bold; }
     </style>
 </head>
 <body>
-    <main class="container">
-        <h1>Hello, DevOps!</h1>
+    <div class="container">
+        <h1> Hello, DevOps!</h1>
         <h2>Lab 1 — Trải nghiệm CI/CD Pipeline</h2>
 
         <div class="info">
-            <p><strong>Bài học:</strong> DevOps Lab 1 — Tổng quan</p>
-            <p><strong>Họ tên:</strong> Lê Đức Tước</p>
-            <p><strong>Deploy bởi:</strong> GitHub Actions CI/CD</p>
-            <p><strong>Ngày deploy:</strong> <span id="date"></span></p>
-            <p><strong>Pipeline status:</strong> <span class="status">Automated</span></p>
+            <p> <strong>Bài học:</strong> DevOps Lab 1 — Tổng quan</p>
+            <p> <strong>Deploy bởi:</strong> GitHub Actions CI/CD</p>
+            <p> <strong>Ngày deploy:</strong> <span id="date"></span></p>
+            <p> <strong>Pipeline status:</strong> <span class="status"> Automated</span></p>
         </div>
 
-        <div aria-label="Tài liệu công nghệ">
-            <a class="badge" href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" rel="noopener noreferrer">HTML5</a>
-            <a class="badge" href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank" rel="noopener noreferrer">CSS3</a>
-            <a class="badge" href="https://git-scm.com/doc" target="_blank" rel="noopener noreferrer">Git</a>
-            <a class="badge" href="https://docs.github.com/en/actions" target="_blank" rel="noopener noreferrer">GitHub Actions</a>
-            <a class="badge" href="https://docs.gitlab.com/ee/ci/" target="_blank" rel="noopener noreferrer">CI/CD</a>
-            <a class="badge" href="https://docs.aws.amazon.com/whitepapers/latest/introduction-devops-aws/introduction.html" target="_blank" rel="noopener noreferrer">DevOps</a>
+        <div>
+            <span class="badge">HTML5</span>
+            <span class="badge">CSS3</span>
+            <span class="badge">Git</span>
+            <span class="badge">GitHub Actions</span>
+            <span class="badge">CI/CD</span>
+            <span class="badge">DevOps</span>
         </div>
 
         <div class="footer">
             <p>Deployed automatically via GitHub Actions Pipeline</p>
-            <p>Push code → CI Build → Auto Deploy → Live!</p>
+            <p> Push code → CI Build → Auto Deploy → Live! </p>
         </div>
-    </main>
+    </div>
 
     <script>
         document.getElementById('date').textContent = new Date().toLocaleDateString('vi-VN');
