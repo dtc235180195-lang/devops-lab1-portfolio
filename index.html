@@ -2,57 +2,172 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DevOps Lab 1 — My Portfolio</title>
+    <meta name="description" content="Portfolio DevOps của Lê Đức Tước, showcasing DevOps Lab 1, CI/CD, GitHub Actions và các kỹ năng triển khai tự động.">
+    <meta name="keywords" content="DevOps, CI/CD, GitHub Actions, Portfolio, Lê Đức Tước">
+    <meta name="author" content="Lê Đức Tước">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#667eea">
+    <title>Portfolio DevOps | Lê Đức Tước</title>
     <style>
+        :root {
+            --bg-1: #4f46e5;
+            --bg-2: #7c3aed;
+            --card-bg: #ffffff;
+            --surface: #f8fafc;
+            --text: #1f2937;
+            --muted: #475569;
+            --primary: #1d4ed8;
+            --accent: #7c3aed;
+            --success: #166534;
+            --success-bg: #dcfce7;
+            --shadow: rgba(15, 23, 42, 0.18);
+        }
+
         * { margin: 0; padding: 0; box-sizing: border-box; }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, var(--bg-1) 0%, var(--bg-2) 100%);
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            color: #333;
+            color: var(--text);
+            line-height: 1.6;
         }
+
         .container {
-            background: white;
-            border-radius: 16px;
-            padding: 48px;
-            max-width: 600px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            background: var(--card-bg);
+            border-radius: 18px;
+            padding: 48px 40px;
+            max-width: 700px;
+            width: min(92vw, 700px);
+            box-shadow: 0 20px 60px var(--shadow);
             text-align: center;
         }
-        h1 { color: #667eea; margin-bottom: 8px; font-size: 32px; }
-        h2 { color: #764ba2; margin-bottom: 24px; font-size: 18px; font-weight: normal; }
-        .info { background: #f8f9fa; border-radius: 8px; padding: 20px; margin: 16px 0; text-align: left; }
-        .info p { margin: 8px 0; }
-        .badge {
+
+        .eyebrow {
             display: inline-block;
-            background: #667eea;
-            color: white;
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 14px;
-            margin: 4px;
+            padding: 8px 14px;
+            border-radius: 999px;
+            background: rgba(29, 78, 216, 0.1);
+            color: var(--primary);
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            font-size: 12px;
+            margin-bottom: 18px;
         }
-        .footer { margin-top: 24px; font-size: 13px; color: #999; }
-        .status { color: #38a169; font-weight: bold; }
+
+        h1 {
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-size: clamp(2rem, 4vw, 3rem);
+            line-height: 1.2;
+        }
+
+        h2 {
+            color: var(--accent);
+            margin-bottom: 24px;
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            font-weight: 600;
+        }
+
+        .info {
+            background: var(--surface);
+            border: 1px solid rgba(148, 163, 184, 0.3);
+            border-radius: 12px;
+            padding: 20px 22px;
+            margin: 20px 0 24px;
+            text-align: left;
+        }
+
+        .info-list {
+            list-style: none;
+            display: grid;
+            gap: 10px;
+        }
+
+        .info-list li {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            color: var(--text);
+        }
+
+        .info-list strong {
+            min-width: 120px;
+            color: var(--muted);
+        }
+
+        .badges {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 24px;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--primary);
+            color: #fff;
+            padding: 7px 14px;
+            border-radius: 999px;
+            font-size: 0.88rem;
+            font-weight: 600;
+        }
+
+        .footer {
+            margin-top: 20px;
+            font-size: 0.95rem;
+            color: var(--muted);
+        }
+
+        .status {
+            color: var(--success);
+            background: var(--success-bg);
+            padding: 3px 8px;
+            border-radius: 999px;
+            font-weight: 700;
+        }
+
+        @media (max-width: 560px) {
+            .container {
+                padding: 32px 20px;
+            }
+
+            .info-list li {
+                display: block;
+            }
+
+            .info-list strong {
+                display: inline-block;
+                margin-bottom: 4px;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1> Hello, DevOps!</h1>
+    <main class="container" aria-labelledby="page-title">
+        <div class="eyebrow">DevOps Portfolio</div>
+        <h1 id="page-title">Hello, DevOps!</h1>
         <h2>Lab 1 — Trải nghiệm CI/CD Pipeline</h2>
 
-        <div class="info">
-            <p> <strong>Bài học:</strong> DevOps Lab 1 — Tổng quan</p>
-            <p> <strong>Deploy bởi:</strong> GitHub Actions CI/CD</p>
-            <p> <strong>Ngày deploy:</strong> <span id="date"></span></p>
-            <p> <strong>Pipeline status:</strong> <span class="status"> Automated</span></p>
-        </div>
+        <section class="info" aria-label="Thông tin cá nhân và dự án">
+            <ul class="info-list">
+                <li><strong>Bài học:</strong> <span>DevOps Lab 1 — Tổng quan</span></li>
+                <li><strong>Deploy bởi:</strong> <span>GitHub Actions CI/CD</span></li>
+                <li><strong>Ngày deploy:</strong> <time id="current-date" datetime="">Đang cập nhật...</time></li>
+                <li><strong>Pipeline status:</strong> <span class="status">Automated</span></li>
+            </ul>
+        </section>
 
-        <div>
+        <div class="badges" aria-label="Công nghệ sử dụng">
             <span class="badge">HTML5</span>
             <span class="badge">CSS3</span>
             <span class="badge">Git</span>
@@ -61,14 +176,24 @@
             <span class="badge">DevOps</span>
         </div>
 
-        <div class="footer">
+        <footer class="footer">
             <p>Deployed automatically via GitHub Actions Pipeline</p>
-            <p> Push code → CI Build → Auto Deploy → Live! </p>
-        </div>
-    </div>
+            <p>Push code → CI Build → Auto Deploy → Live!</p>
+        </footer>
+    </main>
 
     <script>
-        document.getElementById('date').textContent = new Date().toLocaleDateString('vi-VN');
+        const dateElement = document.getElementById('current-date');
+        if (dateElement) {
+            const today = new Date();
+            const formattedDate = today.toLocaleDateString('vi-VN', {
+                day: '2-digit',
+                month: '2-digit',
+                year: 'numeric'
+            });
+            dateElement.textContent = formattedDate;
+            dateElement.setAttribute('datetime', today.toISOString());
+        }
     </script>
 </body>
 </html>
